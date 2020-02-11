@@ -1,0 +1,23 @@
+<h1><%= @task.title %></h1>
+
+<div class="card">
+  <p>Detail of your task :</p>
+  <p><%= @task.detail %></p>
+</div>
+
+<% if @task.completed == false %>
+  <p>This task is not completed</p>
+<% else %>
+  <p>You have already comleted this task</p>
+<% end %>
+
+<% if @task.completed == false %>
+  <p>Tick and submit for completion</p>
+  <input type="checkbox">
+  <input type="submit">
+<% else %>
+  <p>You have already comleted this task</p>
+<% end %>
+<br>
+<%= link_to 'Back to the index of tasks', tasks_path %>
+<%= link_to 'Edit a task', edit_task_path  %>
